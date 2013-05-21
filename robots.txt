@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://sunetos.github.io/codist/sitemap.xml 
+Sitemap: http://codist/sitemap.xml 
