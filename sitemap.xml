@@ -1,12 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://codist/blog/2010/06/14/curve3d-10-released.html/</loc>
+        <lastmod>2013-05-21T19:57:23-04:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://codist/blog/2010/06/18/hill-climb-algorithms-in-javascript-with-visualization-and-s.html/
+        </loc>
+        <lastmod>2013-05-21T19:57:23-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://codist/blog/2010/08/03/how-to-set-a-list-item-index-in-redis.html/</loc>
+        <lastmod>2013-05-21T19:57:23-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://codist/blog/archives/</loc>
-        <lastmod>2013-05-20T19:01:03-04:00</lastmod>
+        <lastmod>2013-05-21T19:57:23-04:00</lastmod>
     </url>
     <url>
         <loc>http://codist/</loc>
-        <lastmod>2013-05-20T19:01:03-04:00</lastmod>
+        <lastmod>2013-05-21T19:57:23-04:00</lastmod>
     </url>
     <url>
         <loc>http://codist/robots.txt</loc>
