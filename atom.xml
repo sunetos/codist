@@ -4,7 +4,7 @@
   <title><![CDATA[codi.st]]></title>
   <link href="http://codist/atom.xml" rel="self"/>
   <link href="http://codist/"/>
-  <updated>2013-05-21T19:58:08-04:00</updated>
+  <updated>2013-05-21T20:00:18-04:00</updated>
   <id>http://codist/</id>
   <author>
     <name><![CDATA[Adam R. Smith]]></name>
@@ -15,7 +15,7 @@
   
   <entry>
     <title type="html"><![CDATA[How to Set a List Item Index in Redis]]></title>
-    <link href="http://codist/blog/2010/08/03/how-to-set-a-list-item-index-in-redis.html/"/>
+    <link href="http://codist/blog/2010/08/03/how-to-set-a-list-item-index-in-redis.html"/>
     <updated>2010-08-03T14:25:12-04:00</updated>
     <id>http://codist/blog/2010/08/03/how-to-set-a-list-item-index-in-redis.html</id>
     <content type="html"><![CDATA[]]></content>
@@ -23,7 +23,7 @@
   
   <entry>
     <title type="html"><![CDATA[Hill Climb Algorithms in Javascript with Visualization and Source]]></title>
-    <link href="http://codist/blog/2010/06/18/hill-climb-algorithms-in-javascript-with-visualization-and-s.html/"/>
+    <link href="http://codist/blog/2010/06/18/hill-climb-algorithms-in-javascript-with-visualization-and-s.html"/>
     <updated>2010-06-18T22:47:00-04:00</updated>
     <id>http://codist/blog/2010/06/18/hill-climb-algorithms-in-javascript-with-visualization-and-s.html</id>
     <content type="html"><![CDATA[]]></content>
@@ -31,7 +31,7 @@
   
   <entry>
     <title type="html"><![CDATA[Curve3D 1.0 Released]]></title>
-    <link href="http://codist/blog/2010/06/14/curve3d-10-released.html/"/>
+    <link href="http://codist/blog/2010/06/14/curve3d-10-released.html"/>
     <updated>2010-06-14T02:36:48-04:00</updated>
     <id>http://codist/blog/2010/06/14/curve3d-10-released.html</id>
     <content type="html"><![CDATA[]]></content>
