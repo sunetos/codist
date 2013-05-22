@@ -101,7 +101,65 @@
 
 <p>The source code is available as a gist of Python code. Porting to other languages should be quite trivial. Note that the code uses a rough mutex I threw together for this example; it is not bullet-proof for production use.</p>
 
-<script src="http://gist.github.com/506541.js?file=redis-list-index.py"></script>
+<div><script src='https://gist.github.com/506541.js?file=redis-list-index.py'></script>
+<noscript><pre><code>import redis
+from contextlib import contextmanager
+
+@contextmanager
+def redisLock(r, key):
+    '''
+    Acquire a lock on a particular key (makes a new mutex key).
+    This is not meant for very high concurrency, just to avoid
+    data corruption in simple cases.
+    '''
+
+    tries = 15
+
+    lockKey = '%s-mutex' % (key)
+    locked = 0
+    for i in range(tries):
+        locked = r.setnx(lockKey, 1)
+        if not locked:
+            time.sleep(0.1)
+        else: break
+        
+    if not locked: # Assume a crash or deadlock
+        r.set(lockKey, 1)
+        
+    yield
+    r.delete(lockKey)
+
+def setListItemIndex(r, key, oldIndex, newIndex):
+    ''' Set the index of any redis list item efficiently. '''
+
+    with redisLock(r, key):
+        listSize = r.llen(key)
+        pipe = r.pipeline()
+        maxIndex = listSize - 1
+        queueKey = '%s-queue' % (key)
+        targetKey = '%s-target' % (key)
+        
+        # First half: shuffle everything out of the list
+        for i in range(oldIndex, maxIndex):
+            pipe.rpoplpush(key, queueKey)
+            
+        pipe.rpoplpush(key, targetKey)
+        
+        for i in range(oldIndex):
+            pipe.rpoplpush(key, queueKey)
+            
+        # Second half: put back in the list, in the new order
+        for i in range(newIndex, maxIndex):
+            pipe.rpoplpush(queueKey, key)
+            
+        pipe.rpoplpush(targetKey, key)
+        
+        for i in range(newIndex):
+            pipe.rpoplpush(queueKey, key)
+            
+        pipe.execute()
+</code></pre></noscript></div>
+
 </div>
 
 
