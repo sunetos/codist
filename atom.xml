@@ -4,7 +4,7 @@
   <title><![CDATA[codi.st]]></title>
   <link href="http://codist/atom.xml" rel="self"/>
   <link href="http://codist/"/>
-  <updated>2013-05-21T20:00:18-04:00</updated>
+  <updated>2013-05-21T20:24:51-04:00</updated>
   <id>http://codist/</id>
   <author>
     <name><![CDATA[Adam R. Smith]]></name>
@@ -22,6 +22,25 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[How to Set a List Item Index in Redis]]></title>
+    <link href="http://codist/blog/2010/08/03/how-to-set-a-list-item-index-in-redis"/>
+    <updated>2010-08-03T14:25:12-04:00</updated>
+    <id>http://codist/blog/2010/08/03/how-to-set-a-list-item-index-in-redis</id>
+    <content type="html"><![CDATA[<p>I love <a href="http://redis.io/">Redis</a>, a unique &#8220;No SQL&#8221; database. One of the reasons it&#8217;s so stable and efficient is that its creator, <a href="http://twitter.com/antirez">@antirez</a>, sticks to his guns and does not implement features that might encourage users to poorly use Redis. However, there is one such feature that I feel is crucial for a number of use cases that he refuses to implement since it is an O(N) operation: setting a list item index.</p>
+
+<p>The problem is that Redis &#8220;lists&#8221; are really misnamed. While internally they are implemented with linked lists, their intended use is actually a &#8220;deque&#8221; (double-ended queue). Choosing to call them &#8220;lists&#8221; has confused a number of users (including myself) whose application truly needs a proper list. Fortunately, Redis has one very powerful feature that can be used to fill in some of the shortcomings of the deque and make it closer to a proper list with good performance.</p>
+
+<p>This powerful feature is the pipeline, which allows you to queue up a sequence of commands which will be performed synchronously in a single call. If you combine a pipeline with a Redis mutex, you can achieve nearly atomic complex operations with only a few blocking network calls in your app.</p>
+
+<p>After some careful thought I was able to produce an algorithm that properly implements Redis list index manipulation using a single pipeline. It&#8217;s as efficient as a linked list operation can be, O(N), iterating the list exactly twice for every call. This is quite reasonable for the use cases that need it, which is usually a UGC (user generated content) ordered list for a web app with only 10-20 items in it. Since it is implemented with a pipeline, it&#8217;s the &#8220;next best thing&#8221; to Redis implementing the feature properly server-side.</p>
+
+<p>The source code is available as a gist of Python code. Porting to other languages should be quite trivial. Note that the code uses a rough mutex I threw together for this example; it is not bullet-proof for production use.</p>
+
+<script src="http://gist.github.com/506541.js?file=redis-list-index.py"></script>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Hill Climb Algorithms in Javascript with Visualization and Source]]></title>
     <link href="http://codist/blog/2010/06/18/hill-climb-algorithms-in-javascript-with-visualization-and-s.html"/>
     <updated>2010-06-18T22:47:00-04:00</updated>
@@ -30,11 +49,39 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Hill Climb Algorithms in Javascript with Visualization and Source]]></title>
+    <link href="http://codist/blog/2010/06/18/hill-climb-algorithms-in-javascript-with-visualization-and-s"/>
+    <updated>2010-06-18T22:47:00-04:00</updated>
+    <id>http://codist/blog/2010/06/18/hill-climb-algorithms-in-javascript-with-visualization-and-s</id>
+    <content type="html"><![CDATA[<p><a href="http://en.wikipedia.org/wiki/Hill_climbing" target="_blank">Hill climb algorithms</a> are some of the simplest in artificial intelligence. A hill climb algorithm quickly finds a local maximum from a random starting position. I have developed a few variations of the basic algorithm in Javascript as well as a visualization tool to see how they work.</p>
+<p>. There are a few variations shown here, including:</p>
+<ul>
+<li> <strong>Steepest Ascent</strong>: heads in the direction of the greatest improvement over the current position.</li>
+<li> <strong>Random Restart</strong>: keeps trying random positions until there has been no improvement for several attempts.</li>
+</ul>
+<h3>Hill Climb Visualization</h3>
+<p>The perlin noise generation algorithms are taken from <a href="http://gist.github.com/304522">Sean McCullough.</a></p>
+<p><iframe src="http://curve3d.com/tests/hill-climb/index.html" border="0" height="400" width="600"></iframe></p>
+<h3>Hill Climb Javascript Source Code</h3>
+<p><a href="http://gist.github.com/444396.js?file=hillclimb">http://gist.github.com/444396.js?file=hillclimb</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Curve3D 1.0 Released]]></title>
     <link href="http://codist/blog/2010/06/14/curve3d-10-released.html"/>
     <updated>2010-06-14T02:36:48-04:00</updated>
     <id>http://codist/blog/2010/06/14/curve3d-10-released.html</id>
     <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Curve3D 1.0 Released]]></title>
+    <link href="http://codist/blog/2010/06/14/curve3d-10-released"/>
+    <updated>2010-06-14T02:36:48-04:00</updated>
+    <id>http://codist/blog/2010/06/14/curve3d-10-released</id>
+    <content type="html"><![CDATA[<p>With IE8 finally supported, Curve3D has hit version 1.0. Try it out on <a href="http://codist/curve3d">the Curve3D page.</a></p>
+]]></content>
   </entry>
   
 </feed>
