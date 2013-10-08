@@ -1,33 +1,33 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://codist/blog/2010/06/14/curve3d-10-released</loc>
-        <lastmod>2013-05-21T20:32:54-04:00</lastmod>
+        <loc>http://codist/blog/2010/06/13/curve3d-10-released</loc>
+        <lastmod>2013-05-21T17:32:54-07:00</lastmod>
     </url>
     <url>
         <loc>
             http://codist/blog/2010/06/18/hill-climb-algorithms-in-javascript-with-visualization-and-s
         </loc>
-        <lastmod>2013-05-21T21:51:36-04:00</lastmod>
+        <lastmod>2013-05-21T18:51:36-07:00</lastmod>
     </url>
     <url>
         <loc>http://codist/blog/2010/08/03/how-to-set-a-list-item-index-in-redis</loc>
-        <lastmod>2013-05-21T21:48:12-04:00</lastmod>
+        <lastmod>2013-05-21T18:48:12-07:00</lastmod>
     </url>
     <url>
         <loc>http://codist/blog/archives/</loc>
-        <lastmod>2013-05-21T21:51:36-04:00</lastmod>
+        <lastmod>2013-05-21T18:51:36-07:00</lastmod>
     </url>
     <url>
         <loc>http://codist/curve3d.html</loc>
-        <lastmod>2013-05-21T22:09:08-04:00</lastmod>
+        <lastmod>2013-05-21T19:09:08-07:00</lastmod>
     </url>
     <url>
         <loc>http://codist/</loc>
-        <lastmod>2013-05-21T21:51:36-04:00</lastmod>
+        <lastmod>2013-05-21T18:51:36-07:00</lastmod>
     </url>
     <url>
         <loc>http://codist/robots.txt</loc>
-        <lastmod>2013-05-20T19:01:03-04:00</lastmod>
+        <lastmod>2013-05-20T16:01:03-07:00</lastmod>
     </url>
 </urlset>
